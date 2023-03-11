@@ -19,14 +19,15 @@ html {
 body {
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
-    font-weight: 400;
-    color: #0a0a0a;
+    font-weight: 700;
+    color: blue;
     background-color:rgb(232, 234, 223);
     overflow: auto;
 }
 
 h1 {
     font-size: 1.2rem;
+    color:black;
 }
 
 .container {
@@ -41,7 +42,6 @@ h1 {
 
 .accordion__title {
     display: block;
-    cursor: pointer;
 }
 
 .accordion-input {
@@ -72,8 +72,6 @@ h1 {
     transition: all 1.5s ease;
 }
 
-
-
 .ico {
     display: inline-block;
     width: 0rem;
@@ -84,6 +82,10 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.accordion-input:checked ~.title-container {
+    color:black;
 }
 
 
@@ -107,13 +109,15 @@ h1 {
         font-size: 1.8rem;
     }
 
+    .accordion__title {
+        cursor: pointer;
+    }
 
     .accordion:hover .ico {
         width: 3rem;
         height: 3rem;
         transition: 0.5s ease;
     }
-
 
     .accordion__item:hover .ico {
         transform: rotate(45deg);
@@ -129,5 +133,15 @@ h1 {
         padding: 1rem 0;
         opacity: 1;
         transition: all 1.5s ease;
+    }
+
+    .accordion:hover {
+        color: black;
+    }
+
+    .accordion__item:active {
+        color: blue;
+        opacity: 0.7;
+        transition: all 0.2s ease;
     }
 }
