@@ -16,6 +16,13 @@ html {
     scroll-behavior: smooth;
     }
 
+hr {
+    height: 0.1rem;
+    border: none;
+    color:rgb(182, 178, 178);
+    background-color:rgb(182, 178, 178);
+}
+
 body {
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
