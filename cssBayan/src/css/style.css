@@ -19,11 +19,14 @@ html {
 body {
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
-    line-height: 1.1rem;
     font-weight: 400;
     color: #0a0a0a;
     background-color:rgb(232, 234, 223);
     overflow: auto;
+}
+
+h1 {
+    font-size: 1.2rem;
 }
 
 .container {
@@ -69,17 +72,12 @@ body {
     transition: all 1.5s ease;
 }
 
-.accordion__item:hover .accordion__content {
-    height: 100%;
-    padding: 1rem 0;
-    opacity: 1;
-    transition: all 1.5s ease;
-}
+
 
 .ico {
     display: inline-block;
-    width: 3rem;
-    height: 3rem;
+    width: 0rem;
+    height: 0rem;
 }
 
 .title-container {
@@ -88,11 +86,48 @@ body {
     align-items: center;
 }
 
-.accordion__item:hover .ico {
-    transform: rotate(45deg);
-    transition: all 0.1s ease;
+
+@media (min-width: 820px) {
+    body {
+        font-size: 1.2rem;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
 }
 
-.accordion-input:checked ~ .title-container .ico {
-    transform: rotate(45deg);
+
+@media (min-width: 1920px) {
+    body {
+        font-size: 1.5rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+
+    .accordion:hover .ico {
+        width: 3rem;
+        height: 3rem;
+        transition: 0.5s ease;
+    }
+
+
+    .accordion__item:hover .ico {
+        transform: rotate(45deg);
+        transition: all 0.1s ease;
+    }
+
+    .accordion-input:checked ~ .title-container .ico {
+        transform: rotate(45deg);
+    }
+
+    .accordion__item:hover .accordion__content {
+        height: 100%;
+        padding: 1rem 0;
+        opacity: 1;
+        transition: all 1.5s ease;
+    }
 }
