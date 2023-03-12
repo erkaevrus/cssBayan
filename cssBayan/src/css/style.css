@@ -27,8 +27,8 @@ body {
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
     font-weight: 700;
-    color: blue;
-    background-color:rgb(232, 234, 223);
+    color: rgb(138, 138, 145);
+    background-color:rgb(245, 247, 239);
     overflow: auto;
 }
 
@@ -81,8 +81,8 @@ h1 {
 
 .ico {
     display: inline-block;
-    width: 0rem;
-    height: 0rem;
+    width: 3rem;
+    height: 3rem;
 }
 
 .title-container {
@@ -95,8 +95,13 @@ h1 {
     color:black;
 }
 
+.accordion-input:checked ~ .title-container .ico {
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+}
 
-@media (min-width: 820px) {
+
+@media (min-width: 768px) {
     body {
         font-size: 1.2rem;
     }
@@ -107,7 +112,7 @@ h1 {
 }
 
 
-@media (min-width: 1920px) {
+@media (min-width: 1000px) {
     body {
         font-size: 1.5rem;
     }
@@ -118,6 +123,21 @@ h1 {
 
     .accordion__title {
         cursor: pointer;
+    }
+
+    .accordion__item:active {
+        color: rgb(138, 138, 145);
+        opacity: 0.7;
+        transition: all 0.2s ease;
+    }
+}
+
+
+@media (hover:hover) {
+    .ico {
+        overflow: hidden;
+        width: 0;
+        height:0;
     }
 
     .accordion:hover .ico {
@@ -131,10 +151,6 @@ h1 {
         transition: all 0.1s ease;
     }
 
-    .accordion-input:checked ~ .title-container .ico {
-        transform: rotate(45deg);
-    }
-
     .accordion__item:hover .accordion__content {
         height: 100%;
         padding: 1rem 0;
@@ -144,11 +160,5 @@ h1 {
 
     .accordion:hover {
         color: black;
-    }
-
-    .accordion__item:active {
-        color: blue;
-        opacity: 0.7;
-        transition: all 0.2s ease;
     }
 }
