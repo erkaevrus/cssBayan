@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    }
+
+hr {
+    height: 0.1rem;
+    border: none;
+    color:rgb(182, 178, 178);
+    background-color:rgb(182, 178, 178);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgb(138, 138, 145);
+    background-color:rgb(245, 247, 239);
+    overflow: auto;
+}
+
+h1 {
+    font-size: 1.2rem;
+    color:black;
+}
+
+.container {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.accordion {
+    margin-bottom: 1rem;
+}
+
+.accordion__title {
+    display: block;
+}
+
+.accordion-input {
+    width: 0;
+    height: 0;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.accordion__content {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.img {
+    width: 80%;
+    object-fit: cover;
+}
+
+.accordion-input:checked ~ .accordion__content {
+    height: 100%;
+    padding: 1rem 0;
+    opacity: 1;
+    transition: all 1.5s ease;
+}
+
+.ico {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+}
+
+.title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-input:checked ~.title-container {
+    color:black;
+}
+
+.accordion-input:checked ~ .title-container .ico {
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+}
+
+
+@media (min-width: 768px) {
+    body {
+        font-size: 1.2rem;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+}
+
+
+@media (min-width: 1000px) {
+    body {
+        font-size: 1.5rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .accordion__title {
+        cursor: pointer;
+    }
+
+    .accordion__item:active {
+        color: rgb(138, 138, 145);
+        opacity: 0.7;
+        transition: all 0.2s ease;
+    }
+}
+
+
+@media (hover:hover) {
+    .ico {
+        overflow: hidden;
+        width: 0;
+        height:0;
+    }
+
+    .accordion:hover .ico {
+        width: 3rem;
+        height: 3rem;
+        transition: 0.5s ease;
+    }
+
+    .accordion__item:hover .ico {
+        transform: rotate(45deg);
+        transition: all 0.1s ease;
+    }
+
+    .accordion__item:hover .accordion__content {
+        height: 100%;
+        padding: 1rem 0;
+        opacity: 1;
+        transition: all 1.5s ease;
+    }
+
+    .accordion:hover {
+        color: black;
+    }
+}
